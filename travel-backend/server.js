@@ -28,6 +28,13 @@ app.use(morgan("dev"));
 
 // Health check
 app.get("/", (_req, res) => res.send("🚀 Travel API is alive!"));
+app.get("/api/health", (req, res) => {
+  res.json({
+    status: "OK",
+    message: "Backend is running fine 🚀",
+    timestamp: new Date().toISOString()
+  });
+});
 
 // Mount API routes
 app.use("/api/auth", authRoutes);
