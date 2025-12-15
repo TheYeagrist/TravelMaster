@@ -35,7 +35,7 @@ function App() {
   return (
     <div className="min-h-screen bg-gray-100">
       {/* Navigation */}
-      <nav className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg">
+      <nav className="w-full bg-black text-white shadow-lg" style={{ backgroundColor: '#000000' }}>
         <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center flex-wrap gap-4">
           <button
             onClick={() => setCurrentPage('home')}
@@ -48,7 +48,7 @@ function App() {
             <button
               onClick={() => setCurrentPage('home')}
               className={`px-4 py-2 rounded-lg transition ${
-                currentPage === 'home' ? 'bg-white text-blue-600' : 'hover:bg-blue-700'
+                currentPage === 'home' ? 'bg-white text-black font-bold' : 'text-white hover:bg-gray-800'
               }`}
             >
               Home
@@ -56,7 +56,7 @@ function App() {
             <button
               onClick={() => setCurrentPage('packages')}
               className={`px-4 py-2 rounded-lg transition ${
-                currentPage === 'packages' ? 'bg-white text-blue-600' : 'hover:bg-blue-700'
+                currentPage === 'packages' ? 'bg-white text-black font-bold' : 'text-white hover:bg-gray-800'
               }`}
             >
               📦 Packages
@@ -64,7 +64,7 @@ function App() {
             <button
               onClick={() => setCurrentPage('bookings')}
               className={`px-4 py-2 rounded-lg transition ${
-                currentPage === 'bookings' ? 'bg-white text-blue-600' : 'hover:bg-blue-700'
+                currentPage === 'bookings' ? 'bg-white text-black font-bold' : 'text-white hover:bg-gray-800'
               }`}
             >
               📋 Bookings
@@ -72,7 +72,7 @@ function App() {
             <button
               onClick={() => setCurrentPage('payments')}
               className={`px-4 py-2 rounded-lg transition ${
-                currentPage === 'payments' ? 'bg-white text-blue-600' : 'hover:bg-blue-700'
+                currentPage === 'payments' ? 'bg-white text-black font-bold' : 'text-white hover:bg-gray-800'
               }`}
             >
               💳 Payments
@@ -80,7 +80,7 @@ function App() {
             <button
               onClick={() => setCurrentPage('reviews')}
               className={`px-4 py-2 rounded-lg transition ${
-                currentPage === 'reviews' ? 'bg-white text-blue-600' : 'hover:bg-blue-700'
+                currentPage === 'reviews' ? 'bg-white text-black font-bold' : 'text-white hover:bg-gray-800'
               }`}
             >
               ⭐ Reviews
@@ -88,7 +88,7 @@ function App() {
             <button
               onClick={() => setCurrentPage('enquiries')}
               className={`px-4 py-2 rounded-lg transition ${
-                currentPage === 'enquiries' ? 'bg-white text-blue-600' : 'hover:bg-blue-700'
+                currentPage === 'enquiries' ? 'bg-white text-black font-bold' : 'text-white hover:bg-gray-800'
               }`}
             >
               💬 Enquiries
@@ -96,7 +96,7 @@ function App() {
             <button
               onClick={() => setCurrentPage('auth')}
               className={`px-4 py-2 rounded-lg transition ${
-                currentPage === 'auth' ? 'bg-white text-blue-600' : 'hover:bg-blue-700'
+                currentPage === 'auth' ? 'bg-white text-black font-bold' : 'text-white hover:bg-gray-800'
               }`}
             >
               🔐 Auth

@@ -1,0 +1,754 @@
+/* ============================================
+   TRAVELMASTER - SEMANTIC STYLES WITH MEANINGFUL NAMES
+   ============================================ */
+
+/* Root Variables - Change these to customize the entire theme */
+:root {
+  /* Primary Color - Used for navbar background and primary actions */
+  --color-navbar-background: #000000;
+  --color-navbar-text: #ffffff;
+  
+  /* Secondary Color - Used for active states and highlights */
+  --color-button-active-background: #ffffff;
+  --color-button-active-text: #000000;
+  
+  /* Neutral Colors - Used for borders, backgrounds, inactive states */
+  --color-button-inactive-hover: #2d3748;
+  --color-text-primary: #1f2937;
+  --color-text-secondary: #6b7280;
+  --color-text-light: #ffffff;
+  --color-background-page: #f3f4f6;
+  --color-background-card: #ffffff;
+  --color-border-light: #e5e7eb;
+  
+  /* Status Colors */
+  --color-status-success: #10b981;
+  --color-status-error: #ef4444;
+  --color-status-warning: #f59e0b;
+  --color-status-info: #3b82f6;
+  
+  /* Spacing and Border Radius */
+  --border-radius-default: 0.5rem;
+  --border-radius-full: 9999px;
+  
+  /* Shadows and Effects */
+  --shadow-card: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-card-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
+  --transition-default: all 0.3s ease;
+}
+
+/* ============================================
+   NAVBAR / NAVIGATION STYLES
+   ============================================ */
+
+/* Main Navigation Bar Container */
+.navbar-container {
+  background-color: var(--color-navbar-background);
+  color: var(--color-navbar-text);
+  box-shadow: var(--shadow-card);
+  padding: 1rem;
+  width: 100%;
+}
+
+/* Navbar Content Wrapper */
+.navbar-content-wrapper {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Logo/Brand Element */
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: var(--transition-default);
+}
+
+.navbar-logo:hover {
+  opacity: 0.8;
+}
+
+/* Navigation Menu Buttons Container */
+.navbar-menu-container {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Navigation Menu Button - Inactive State */
+.navbar-menu-button {
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius-default);
+  transition: var(--transition-default);
+  cursor: pointer;
+  border: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--color-navbar-text);
+  background-color: transparent;
+}
+
+.navbar-menu-button:hover {
+  background-color: var(--color-button-inactive-hover);
+}
+
+/* Navigation Menu Button - Active State */
+.navbar-menu-button--active {
+  background-color: var(--color-button-active-background);
+  color: var(--color-button-active-text);
+  font-weight: bold;
+}
+
+/* User Profile Display in Navbar */
+.navbar-user-profile {
+  font-size: 0.875rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--border-radius-default);
+  color: var(--color-navbar-text);
+}
+
+/* ============================================
+   PAGE LAYOUT STYLES
+   ============================================ */
+
+/* Main Page Container */
+.page-container {
+  min-height: 100vh;
+  background-color: var(--color-background-page);
+  padding: 3rem 1rem;
+}
+
+/* Content Wrapper - Max Width Container */
+.content-wrapper {
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+/* ============================================
+   PAGE HEADER STYLES
+   ============================================ */
+
+/* Main Page Title */
+.page-header-title {
+  font-size: 2.25rem;
+  font-weight: bold;
+  color: var(--color-text-primary);
+  margin-bottom: 0.5rem;
+}
+
+/* Page Subtitle */
+.page-header-subtitle {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 2rem;
+}
+
+/* ============================================
+   FORM STYLES
+   ============================================ */
+
+/* Form Label */
+.form-field-label {
+  display: block;
+  color: var(--color-text-primary);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+/* Text Input Field */
+.form-field-input {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--border-radius-default);
+  font-size: 1rem;
+  transition: var(--transition-default);
+  font-family: inherit;
+  color: var(--color-text-primary);
+  background-color: var(--color-background-card);
+}
+
+.form-field-input:focus {
+  outline: 2px solid var(--color-status-info);
+  border-color: var(--color-status-info);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.form-field-input:disabled {
+  background-color: #f9fafb;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Textarea Field */
+.form-field-textarea {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--border-radius-default);
+  font-size: 1rem;
+  transition: var(--transition-default);
+  font-family: inherit;
+  resize: vertical;
+  color: var(--color-text-primary);
+  background-color: var(--color-background-card);
+}
+
+.form-field-textarea:focus {
+  outline: 2px solid var(--color-status-info);
+  border-color: var(--color-status-info);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Select/Dropdown Field */
+.form-field-select {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--border-radius-default);
+  font-size: 1rem;
+  transition: var(--transition-default);
+  font-family: inherit;
+  background-color: var(--color-background-card);
+  cursor: pointer;
+  color: var(--color-text-primary);
+}
+
+.form-field-select:focus {
+  outline: 2px solid var(--color-status-info);
+  border-color: var(--color-status-info);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Form Group Wrapper */
+.form-field-group {
+  margin-bottom: 1rem;
+}
+
+/* Form Row - Multiple fields in one row */
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+/* ============================================
+   BUTTON STYLES
+   ============================================ */
+
+/* Primary Button - Main action button */
+.button-primary {
+  width: 100%;
+  background-color: var(--color-status-info);
+  color: var(--color-text-light);
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius-default);
+  cursor: pointer;
+  transition: var(--transition-default);
+  border: none;
+  font-size: 1rem;
+}
+
+.button-primary:hover {
+  background-color: #2563eb;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.button-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Secondary Button - Alternative action */
+.button-secondary {
+  width: 100%;
+  background-color: #6b7280;
+  color: var(--color-text-light);
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius-default);
+  cursor: pointer;
+  transition: var(--transition-default);
+  border: none;
+  font-size: 1rem;
+}
+
+.button-secondary:hover {
+  background-color: #4b5563;
+}
+
+/* Success Button - Positive action */
+.button-success {
+  background-color: var(--color-status-success);
+  color: var(--color-text-light);
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius-default);
+  cursor: pointer;
+  transition: var(--transition-default);
+  border: none;
+  font-size: 1rem;
+}
+
+.button-success:hover {
+  background-color: #059669;
+}
+
+/* Danger Button - Destructive action */
+.button-danger {
+  background-color: var(--color-status-error);
+  color: var(--color-text-light);
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius-default);
+  cursor: pointer;
+  transition: var(--transition-default);
+  border: none;
+  font-size: 1rem;
+}
+
+.button-danger:hover {
+  background-color: #dc2626;
+}
+
+/* ============================================
+   CARD COMPONENT STYLES
+   ============================================ */
+
+/* Card Container */
+.card-container {
+  background-color: var(--color-background-card);
+  border-radius: var(--border-radius-default);
+  box-shadow: var(--shadow-card);
+  padding: 2rem;
+  transition: var(--transition-default);
+}
+
+.card-container:hover {
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* Card Header Section */
+.card-header-section {
+  border-bottom: 1px solid var(--color-border-light);
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+.card-header-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+/* Card Body Content */
+.card-body-content {
+  padding: 1rem 0;
+}
+
+/* Card Footer Section */
+.card-footer-section {
+  border-top: 1px solid var(--color-border-light);
+  padding-top: 1rem;
+  margin-top: 1rem;
+}
+
+/* ============================================
+   ALERT / MESSAGE STYLES
+   ============================================ */
+
+/* Success Alert */
+.alert-success-container {
+  background-color: #d1fae5;
+  border: 1px solid #a7f3d0;
+  color: #065f46;
+  padding: 1rem;
+  border-radius: var(--border-radius-default);
+  margin-top: 1rem;
+}
+
+.alert-success-title {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+/* Error Alert */
+.alert-error-container {
+  background-color: #fee2e2;
+  border: 1px solid #fecaca;
+  color: #7f1d1d;
+  padding: 1rem;
+  border-radius: var(--border-radius-default);
+  margin-top: 1rem;
+}
+
+.alert-error-title {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+/* Warning Alert */
+.alert-warning-container {
+  background-color: #fef3c7;
+  border: 1px solid #fde68a;
+  color: #78350f;
+  padding: 1rem;
+  border-radius: var(--border-radius-default);
+  margin-top: 1rem;
+}
+
+.alert-warning-title {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+/* Info Alert */
+.alert-info-container {
+  background-color: #dbeafe;
+  border: 1px solid #bfdbfe;
+  color: #1e40af;
+  padding: 1rem;
+  border-radius: var(--border-radius-default);
+  margin-top: 1rem;
+}
+
+.alert-info-title {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+/* Alert Code/Details Block */
+.alert-details-code {
+  background-color: var(--color-background-card);
+  padding: 0.75rem;
+  border-radius: var(--border-radius-default);
+  font-size: 0.75rem;
+  font-family: 'Courier New', monospace;
+  overflow-x: auto;
+  margin-top: 0.75rem;
+}
+
+/* ============================================
+   TABLE STYLES
+   ============================================ */
+
+/* Table Wrapper Container */
+.table-wrapper {
+  overflow-x: auto;
+  background-color: var(--color-background-card);
+  border-radius: var(--border-radius-default);
+  box-shadow: var(--shadow-card);
+}
+
+/* Table Element */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Table Header Row */
+.data-table-header {
+  background-color: #f9fafb;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+/* Table Header Cell */
+.data-table-header-cell {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+/* Table Body Row */
+.data-table-body-row {
+  border-bottom: 1px solid #f3f4f6;
+  transition: var(--transition-default);
+}
+
+.data-table-body-row:hover {
+  background-color: #f9fafb;
+}
+
+/* Table Body Cell */
+.data-table-body-cell {
+  padding: 1rem;
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+}
+
+/* ============================================
+   BADGE / STATUS INDICATOR STYLES
+   ============================================ */
+
+/* Badge Container */
+.status-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--border-radius-full);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* Success Badge */
+.status-badge--success {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+/* Error Badge */
+.status-badge--error {
+  background-color: #fee2e2;
+  color: #7f1d1d;
+}
+
+/* Warning Badge */
+.status-badge--warning {
+  background-color: #fef3c7;
+  color: #78350f;
+}
+
+/* Pending Badge */
+.status-badge--pending {
+  background-color: #fef08a;
+  color: #713f12;
+}
+
+/* Info Badge */
+.status-badge--info {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+/* ============================================
+   GRID LAYOUT STYLES
+   ============================================ */
+
+/* Grid Container - Auto responsive */
+.grid-container {
+  display: grid;
+  gap: 1.5rem;
+}
+
+/* Grid Layout - 2 Columns */
+.grid-layout-2col {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+/* Grid Layout - 3 Columns */
+.grid-layout-3col {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+/* Responsive Grid Breakpoint */
+@media (max-width: 768px) {
+  .grid-layout-2col,
+  .grid-layout-3col {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================
+   FOOTER STYLES
+   ============================================ */
+
+/* Footer Container */
+.footer-container {
+  background-color: #1f2937;
+  color: var(--color-text-light);
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 3rem;
+}
+
+/* Footer Main Text */
+.footer-text-main {
+  font-size: 0.875rem;
+  margin: 0.5rem 0;
+}
+
+/* Footer Secondary Text */
+.footer-text-secondary {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  margin-top: 0.5rem;
+}
+
+/* ============================================
+   UTILITY / HELPER CLASSES
+   ============================================ */
+
+/* Margin Bottom Utilities */
+.margin-bottom-sm { margin-bottom: 0.25rem; }
+.margin-bottom-md { margin-bottom: 0.5rem; }
+.margin-bottom-lg { margin-bottom: 1rem; }
+.margin-bottom-xl { margin-bottom: 1.5rem; }
+.margin-bottom-2xl { margin-bottom: 2rem; }
+
+/* Margin Top Utilities */
+.margin-top-sm { margin-top: 0.25rem; }
+.margin-top-md { margin-top: 0.5rem; }
+.margin-top-lg { margin-top: 1rem; }
+.margin-top-xl { margin-top: 1.5rem; }
+.margin-top-2xl { margin-top: 2rem; }
+
+/* Padding Utilities */
+.padding-sm { padding: 0.5rem; }
+.padding-md { padding: 1rem; }
+.padding-lg { padding: 1.5rem; }
+
+/* Text Alignment Utilities */
+.text-align-center { text-align: center; }
+.text-align-left { text-align: left; }
+.text-align-right { text-align: right; }
+
+/* Text Size Utilities */
+.text-size-sm { font-size: 0.875rem; }
+.text-size-base { font-size: 1rem; }
+.text-size-lg { font-size: 1.125rem; }
+.text-size-xl { font-size: 1.25rem; }
+.text-size-2xl { font-size: 1.5rem; }
+
+/* Text Weight Utilities */
+.font-weight-semibold { font-weight: 600; }
+.font-weight-bold { font-weight: bold; }
+.font-weight-normal { font-weight: normal; }
+
+/* Display Utilities */
+.display-hidden { display: none; }
+.display-block { display: block; }
+.display-flex { display: flex; }
+.display-grid { display: grid; }
+.display-inline { display: inline; }
+
+/* ============================================
+   ANIMATION CLASSES
+   ============================================ */
+
+/* Fade In Animation */
+@keyframes animation-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animation-fade-in {
+  animation: animation-fade-in 0.3s ease-in;
+}
+
+/* Slide Down Animation */
+@keyframes animation-slide-down {
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animation-slide-down {
+  animation: animation-slide-down 0.3s ease-out;
+}
+
+/* Scale Up Animation */
+@keyframes animation-scale-up {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animation-scale-up {
+  animation: animation-scale-up 0.3s ease-out;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - MOBILE FIRST
+   ============================================ */
+
+/* Mobile Devices - Small screens */
+@media (max-width: 640px) {
+  .navbar-menu-container {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .page-header-title {
+    font-size: 1.875rem;
+  }
+
+  .grid-layout-2col,
+  .grid-layout-3col {
+    grid-template-columns: 1fr;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Tablets - Medium screens */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .grid-layout-3col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop - Large screens */
+@media (min-width: 1025px) {
+  .grid-layout-2col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-layout-3col {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ============================================
+   CUSTOM SCROLLBAR STYLING
+   ============================================ */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
